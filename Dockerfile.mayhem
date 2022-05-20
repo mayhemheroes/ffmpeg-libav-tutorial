@@ -1,0 +1,6 @@
+FROM leandromoreira/ffmpeg-devel:4.4
+
+ADD . /files
+RUN gcc -L/opt/ffmpeg/lib -I/opt/ffmpeg/include/ /files/0_hello_world.c \
+    -lavcodec -lavformat -lavfilter -lavdevice -lswresample -lswscale -lavutil \
+    -o /files/build/hello
