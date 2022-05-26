@@ -1,5 +1,5 @@
 project: rnshah9/ffmpeg-libav-tutorial
-target: ffmpeg-libav-tutorial
+target: hello
 
 cmds:
   - cmd: /files/build/hello @@
