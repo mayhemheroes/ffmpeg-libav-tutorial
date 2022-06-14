@@ -1,6 +1,15 @@
-FROM leandromoreira/ffmpeg-devel:4.4
+FROM leandromoreira/ffmpeg-devel:4.4 as builder
 
 ADD . /files
 RUN gcc -L/opt/ffmpeg/lib -I/opt/ffmpeg/include/ /files/0_hello_world.c \
     -lavcodec -lavformat -lavfilter -lavdevice -lswresample -lswscale -lavutil \
     -o /files/build/hello
+
+RUN mkdir -p /deps
+RUN ldd /files/build/hello | tr -s '[:blank:]' '\n' | grep '^/' | xargs -I % sh -c 'cp % /deps;'
+
+FROM ubuntu:20.04 as package
+
+COPY --from=builder /deps /deps
+COPY --from=builder /files/build/hello /files/build/hello
+ENV LD_LIBRARY_PATH=/deps

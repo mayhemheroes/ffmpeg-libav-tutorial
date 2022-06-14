@@ -69,7 +69,7 @@ ARG         LIBVMAF_SHA256SUM="e7fc00ae1322a7eccfcf6d4f1cdf9c67eec8058709887c8c6
 
 
 ARG         LD_LIBRARY_PATH=/opt/ffmpeg/lib
-ARG         MAKEFLAGS="-j8"
+ARG         MAKEFLAGS="-j2"
 ARG         PKG_CONFIG_PATH="/opt/ffmpeg/share/pkgconfig:/opt/ffmpeg/lib/pkgconfig:/opt/ffmpeg/lib64/pkgconfig"
 ARG         PREFIX=/opt/ffmpeg
 ARG         LD_LIBRARY_PATH="/opt/ffmpeg/lib:/opt/ffmpeg/lib64"
