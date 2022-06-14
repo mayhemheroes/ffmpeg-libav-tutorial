@@ -1,6 +1,6 @@
-project: rnshah9/ffmpeg-libav-tutorial
+project: ffmpeg-libav-tutorial
 target: hello
 
 cmds:
-  - cmd: /files/build/hello @@
+  - cmd: /files/build/hello /test.mp3
     filepath: /test.mp3
