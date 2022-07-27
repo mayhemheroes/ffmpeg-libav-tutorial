@@ -2,5 +2,4 @@ project: ffmpeg-libav-tutorial
 target: hello
 
 cmds:
-  - cmd: /files/build/hello /test.mp3
-    filepath: /test.mp3
+  - cmd: /hello @@
