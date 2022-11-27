@@ -1,0 +1,6 @@
+project: ffmpeg-libav-tutorial
+target: logging
+
+cmds:
+  - cmd: /fuzz_logging
+    libfuzzer: true
