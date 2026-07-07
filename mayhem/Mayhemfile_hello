@@ -1,0 +1,6 @@
+project: ffmpeg-libav-tutorial
+target: hello
+
+cmds:
+  - cmd: /mayhem/hello
+    libfuzzer: true
